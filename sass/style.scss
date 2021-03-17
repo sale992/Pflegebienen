@@ -79,7 +79,7 @@ h3 {
     max-width: 1442px;
     width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 16px;
 }
 .button-primary {
     background-color: #ffd44f;
@@ -284,7 +284,7 @@ header {
 .services {
     position: relative;
     padding: 80px 0;
-    max-width: 1920px;
+    // max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     .card-wrapper {
@@ -342,50 +342,69 @@ header {
 }
 
 .timeline {
+    padding: 16px;
     .section-heading {
         margin: 170px 0 70px 0;
         color: #19191b;
+        @media (max-width: 984px) {
+            margin-top: 100px;
+        }
     }
     .col {
         width: 50%;
         @media (max-width: 985px) {
             overflow: hidden;
         }
+        @media (max-width: 680px) {
+            width: 100%;
+        }
     }
     .col1 {
         padding: 48px 0 64px 88px;
+        // padding: 16px;
+        @media (max-width: 984px) {
+            padding: 16px;
+        }
     }
     .col2 {
         position: relative;
-        top: -12px;
+        // top: -12px;
     }
     .timeline-card {
         position: relative;
         display: flex;
-        height: 465px;
         margin-bottom: 64px;
 
         .card-cover {
             position: relative;
+            @media (min-width: 1920px) {
+                position: absolute;
+                max-width: 800px;
+                top: -4%;
+            }
+            @media (max-width: 1919px) {
+                top: 5%;
+            }
             @media (max-width: 1440px) {
+                position: relative;
                 max-width: 501px;
                 width: 100%;
                 top: 10%;
             }
-            @media (max-width: 1224px) {
-                max-width: 460px;
-                width: 100%;
-                top: 19%;
-                right: -8%;
-            }
+            // @media (max-width: 1224px) {
+            //     max-width: 460px;
+            //     width: 100%;
+            //     top: 19%;
+            //     right: -8%;
+            // }
             @media (max-width: 984px) {
-                max-width: 410px;
+                max-width: 500px;
                 width: 100%;
                 right: -40%;
             }
             @media (max-width: 680px) {
-                max-width: 313px;
-                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
@@ -416,7 +435,7 @@ header {
             margin-bottom: 40px;
             span {
                 display: inline-block;
-                width: 50%;
+                width: 21%;
                 padding-left: 28px;
                 position: relative;
                 &::before {
@@ -431,6 +450,19 @@ header {
                 }
                 &:last-child {
                     margin-left: 100px;
+                    @media (max-width: 980px) {
+                        margin-left: 67px;
+                    }
+                    @media (max-width: 680px) {
+                        margin-top: 15px;
+                        margin-left: 0;
+                    }
+                }
+                @media (max-width: 980px) {
+                    width: 35%;
+                }
+                @media (max-width: 680px) {
+                    width: 100%;
                 }
             }
         }
@@ -459,6 +491,9 @@ header {
             max-width: 1320px;
             width: 100%;
         }
+        @media (max-width: 680px) {
+            flex-direction: column-reverse;
+        }
     }
     .reverse {
         flex-direction: row-reverse;
@@ -466,6 +501,13 @@ header {
             @media (max-width: 985px) {
                 left: -11%;
             }
+            @media (max-width: 680px) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @media (max-width: 680px) {
+            flex-direction: column-reverse;
         }
     }
 }
@@ -475,7 +517,22 @@ header {
     width: 100%;
     margin: 0 auto;
     .wrapper {
+        padding: 0 50px;
         display: flex;
+        .col-cover {
+            position: relative;
+            @media (max-width: 1440px) {
+                width: 480px;
+            }
+            @media (max-width: 1224px) {
+                width: 500px;
+                top: 20%;
+            }
+            @media (max-width: 680px) {
+                max-width: 300px;
+            }
+            
+        }
         .col-1-2 {
             img {
                 margin-bottom: 46px;
@@ -503,49 +560,100 @@ header {
                 }
             }
         }
+        
+        .non-reversed {
+            .col-1-2 {
+                &:first-child {
+                    margin-right: 120px;
+                }
+            }
+        }
+        .reverse {
+            margin-top: 40px;
+            flex-direction: row-reverse;
+            .col-1-2 {
+                &:first-child {
+                    margin-left: 120px;
+                }
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 70%;
+            height: 50%;
+            width: 215px;
+            transform: translateY(-50%) rotateY(180deg);
+            background-image: url(assets/right-shape.png);
+            background-repeat: no-repeat;
+            @media (max-width: 1920px) {
+                width: 80px;
+            }
+            @media (max-width: 1244px) {
+                content: none;
+            }
+            @media (max-width: 680px) {
+                content: none;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            height: 100%;
+            width: 215px;
+            transform: translateY(-50%);
+            background-image: url(assets/right-shape.png);
+            background-repeat: no-repeat;
+            @media (max-width: 1920px) {
+                width: 80px;
+            }
+            @media (max-width: 1244px) {
+                content: none;
+            }
+            @media (max-width: 680px) {
+                content: none;
+            }
+        }
+        @media (max-width: 984px) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        @media (max-width: 680px) {
+            padding: 0;
+        }
     }
     .non-reversed {
-        .col-1-2 {
-            &:first-child {
-                margin-right: 120px;
+            .col-1-2 {
+                &:first-child {
+                    margin-right: 120px;
+                    @media (max-width: 1244px) {
+                        margin-right: 20px;
+                    }
+                }
             }
         }
-    }
-    .reverse {
-        margin-top: 40px;
-        flex-direction: row-reverse;
-        .col-1-2 {
-            &:first-child {
-                margin-left: 120px;
+        .reverse {
+            margin-top: 40px;
+            flex-direction: row-reverse;
+            .col-1-2 {
+                &:first-child {
+                    margin-left: 120px;
+                    margin-bottom: 170px;
+                    @media (max-width: 1244px) {
+                        margin-left: 20px;
+                    }
+                }
+            }
+            @media (max-width: 984px) {
+                flex-direction: column-reverse;
             }
         }
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 70%;
-        height: 50%;
-        width: 215px;
-        transform: translateY(-50%) rotateY(180deg);
-        background-image: url(assets/right-shape.png);
-        background-repeat: no-repeat;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 50%;
-        height: 100%;
-        width: 215px;
-        transform: translateY(-50%);
-        background-image: url(assets/right-shape.png);
-        background-repeat: no-repeat;
-    }
 }
 
 .contact {
-    max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     background-color: $color-primary;
