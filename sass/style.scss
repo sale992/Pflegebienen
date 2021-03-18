@@ -192,6 +192,10 @@ header {
             @media (max-width: 1440px) {
                 right: -80%;
             }
+            @media (max-width: 680px) {
+                top: 0%;
+                right: -75%;
+            }
         }
         &::after {
             content: "";
@@ -270,7 +274,8 @@ header {
         align-items: center;
         min-height: 80px;
         margin: 0 auto;
-        margin-top: 32px;
+        // margin-top: 32px;
+        margin-top: 15px;
         transition: all 0.5s ease;
         .logo {
             display: flex;
@@ -366,6 +371,7 @@ header {
                     background: $color-primary;
                 }
             }
+            
         }
         li a.active:focus {
             position: relative;
@@ -542,6 +548,7 @@ header {
         }
         @media (max-width: 680px) {
             width: 100%;
+            overflow: visible; //added 
         }
     }
     .col1 {
@@ -582,7 +589,7 @@ header {
             }
             @media (max-width: 680px) {
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translateX(-50%) translateY(-4%);
             }
         }
         h3 {
@@ -680,7 +687,7 @@ header {
             }
             @media (max-width: 680px) {
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translateX(-45%) translateY(-4%);
             }
         }
         @media (max-width: 680px) {
