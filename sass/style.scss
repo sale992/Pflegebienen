@@ -83,7 +83,6 @@ h3 {
     padding: 0 16px;
 }
 
-
 .button-primary {
     background-color: #ffd44f;
     border-radius: 8px;
@@ -116,6 +115,8 @@ header {
             position: relative;
             max-width: 702px;
             width: 100%;
+            margin-top: 15px;
+
             img {
                 @media (max-width: 1440px) {
                     max-width: 551px;
@@ -133,6 +134,18 @@ header {
                     max-width: 287px;
                     width: 100%;
                 }
+                .small {
+                    display: none !important;
+                    @media (max-width: 1920px) {
+                        display: block !important;
+                    }
+                }
+                .large {
+                    display: block !important;
+                    @media (max-width: 1920px) {
+                        display: none !important;
+                    }
+                }
             }
             &::before {
                 content: "";
@@ -144,7 +157,7 @@ header {
                 height: 117px;
                 top: 66%;
                 left: -1%;
-                z-index: 5;
+                z-index: 2;
                 @media (max-width: 980px) {
                     width: 100px;
                     height: 100px;
@@ -193,7 +206,7 @@ header {
             @media (max-width: 1920px) {
                 right: -9%;
             }
-             @media (max-width: 1440px) {
+            @media (max-width: 1440px) {
                 right: -120px;
             }
         }
@@ -276,7 +289,7 @@ header {
                 }
             }
         }
-        
+
         .nav-links {
             position: relative;
             display: flex;
@@ -289,7 +302,7 @@ header {
                 &:not(:first-child) {
                     margin-left: 67px;
                     @media (max-width: 1224px) {
-                        margin-left: 50px;;
+                        margin-left: 50px;
                     }
                     @media (max-width: 980px) {
                         margin-left: 0;
@@ -329,49 +342,46 @@ header {
         }
 
         li a {
-			position: relative;
-			padding: 0 0 1.2rem 0;
-			color: red;
-			transition: all 0.3s ease;
-			text-decoration: none;
-			min-height: 0;
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 0%;
-				height: 1px;
-				background: transparent;
-				transition: all 0.3s ease;
-			}
-			&:hover {
-				color: $color-primary;
-				&:after {
-					width: 100%;
-					background: $color-primary;
-				}
-			}
-		}
+            position: relative;
+            padding: 0 0 1.2rem 0;
+            color: red;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            min-height: 0;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 1px;
+                background: transparent;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                color: $color-primary;
+                &:after {
+                    width: 100%;
+                    background: $color-primary;
+                }
+            }
+        }
         li a.active:focus {
             position: relative;
             color: $color-primary;
             &:after {
-                content: '';
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 1px;
-				background: $color-primary;
-				transition: all 0.3s ease;
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: $color-primary;
+                transition: all 0.3s ease;
             }
         }
-        
-        
-
     }
 
     .header-main {
@@ -704,7 +714,8 @@ header {
                 margin-bottom: 46px;
             }
             h2 {
-                margin-bottom: 41px;
+                margin-bottom: 21px;
+                padding-bottom: 21px;
                 text-align: left;
             }
             p {
@@ -815,6 +826,18 @@ header {
         }
         @media (max-width: 984px) {
             flex-direction: column-reverse;
+        }
+    }
+    .dashed {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 106px;
+            height: 1px;
+            border-bottom: 1px dashed $color-primary;
+            bottom: 0;
+            left: 0;
         }
     }
 }
